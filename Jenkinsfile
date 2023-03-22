@@ -29,6 +29,13 @@ pipeline {
             }
         }
     }
+        stage('TF-APPLY') {
+            steps {
+                dir("app_infra/ec2") {
+                sh 'terraform apply auto-approve'
+            }
+        }
+    }
 }
     post {
         always {
