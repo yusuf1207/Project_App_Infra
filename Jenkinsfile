@@ -29,13 +29,13 @@ pipeline {
             }
         }
     }
-    //     stage('TF-APPLY') {
-    //         steps {
-    //             dir("app_infra/ec2") {
-    //             sh 'terraform apply -auto-approve'
-    //         }
-    //     }
-    // }
+        stage('TF-APPLY') {
+            steps {
+                dir("app_infra/ec2") {
+                sh 'terraform destroy -auto-approve'
+            }
+        }
+    }
 }
     post {
         always {
